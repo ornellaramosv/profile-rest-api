@@ -7,3 +7,6 @@ class HelloSerializer(serializers.ModelSerializer):
 
     name = serializers.CharField(max_length=10)
 
+    class Meta:
+        model = UserProfile
+        fields = ('name', )
