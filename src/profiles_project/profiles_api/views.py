@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from . import serializers
+from . import serializers,models
 from rest_framework import status, generics, viewsets
 
 # Create your views here.
@@ -86,6 +86,10 @@ class HelloViewSet(viewsets.ViewSet):
 
         return Response({'http_method': 'GET'})
 
+    def update(self, request, pk=None):
+        """Handles getting an object by its ID."""
+
+        return Response({'http_method': 'PUT'})
 
     def partial_update(self, request, pk=None):
         """Handles updating an object."""
@@ -96,3 +100,11 @@ class HelloViewSet(viewsets.ViewSet):
         """Handles removing an object."""
 
         return Response({'http_method': 'DELETE'})
+
+
+class UserProfileViewSet(viewsets.ModelViewSet):
+    """Handles creating, reading and updating profiles."""
+
+    serializer_class = serializers.UserProfileSerializer
+
+    queryset = models.UserProfile.objects.all()
