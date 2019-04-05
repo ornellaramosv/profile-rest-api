@@ -116,3 +116,6 @@ dmypy.json
 .idea/
 .vagrant/
 .DS_Store
+*.xml
+databaseSettings.xml
+_mac/git.xml
