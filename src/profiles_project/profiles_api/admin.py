@@ -4,7 +4,7 @@ from .models import UserProfile, ProfileFeedItem
 # Register your models here.
 
 admin.site.register(UserProfile)
-admin.sites.register(ProfileFeedItem)
+admin.site.register(ProfileFeedItem)
 
 
 
